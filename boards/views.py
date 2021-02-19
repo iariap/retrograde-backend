@@ -70,7 +70,7 @@ class BoardViewSet(viewsets.ViewSet):
     def csv(self, request, pk=None):
         board = Board.objects.get(pk=pk)
         response = HttpResponse(content_type='text/csv')
-        response['Content-Disposition'] = f'attachment; filename="{board.name}.csv"'
+        response['Content-Disposition'] = f'attachment; filename="Board {board.name}.csv"'
 
         writer = csv.writer(response)
         writer.writerow(['Board', 'Column', 'Text', 'Created by','Votes','Created'])

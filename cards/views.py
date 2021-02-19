@@ -34,7 +34,7 @@ class CardDetailSerializer(serializers.ModelSerializer):
         return card.owner == self.context['participant']
 
     def get_voted(self, card):
-        return self.context['participant'] in (vote.who for vote in card.votes.all())
+        return card.votes.filter(who=self.context['participant']).count() > 0
 
     def get_votes(self, card):
         return card.votes.count()
