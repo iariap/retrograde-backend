@@ -3,6 +3,6 @@ Django==3.1.6
 django-cors-headers==3.7.0
 django-rest-framework==0.1.0
 djangorestframework==3.12.2
-jsonfield==3.1.0
+drf-nested-routers==0.92.5
 pytz==2021.1
 sqlparse==0.4.1
